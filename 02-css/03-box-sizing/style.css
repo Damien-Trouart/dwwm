@@ -1,0 +1,66 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: aqua;
+    background-image: url(./img/jesus.jpg);
+    background-size: cover;
+    /* background size:cover permet que l'image couvre enièrement l'élément tandis que contain permet que l'image soit contenue dans l'élément */
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Le background position permet d'indiquer la position 
+        - en cover : positionne l'image dans l'élément
+        - en contain : indique quelle partie de l'image est visible */
+}
+
+footer{
+    /* Résume toutes les propriétés du background */
+    background: red url(https://images.pexels.com/photos/28647033/pexels-photo-28647033/free-photo-of-pizza.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center / contain no-repeat;
+}
+
+article{
+    width: 49%;
+    display: inline-block;
+    border: 5px solid black;
+    padding: 5px 10px;
+    margin: 20px auto 20px 5px;
+    box-shadow: inset 5px 5px 10px 2px red;
+}
+
+h1{
+    font-size: 42px;
+    text-align: center;
+    padding: .8em .1em;
+    color: antiquewhite;
+    text-shadow: 3px 3px goldenrod;
+}
+
+li{
+    display: inline-block;
+    background-color: aqua;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    padding: 1em 5px;
+    margin-left: 15%;
+}
+
+div{
+    width: 40vw;
+    min-width: 200px;
+    max-width: 700px;
+    max-height: 90vh;
+    margin: 5px auto;
+}
+
+img{
+    width: 100%;
+    height: 20vh;
+    /* Le object-fit fonctionne comme background size mais adapté à une balise image */
+    object-fit: cover;
+    /* Le object-position fonctionne comme background position mais adapté à une balise image */
+    object-position: center;
+}

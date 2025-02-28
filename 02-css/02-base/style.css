@@ -1,0 +1,92 @@
+@font-face{
+    font-family: Playwrite;
+    src: url(./PlaywriteITModerna-VariableFont_wght.ttf);
+}
+
+
+/* Le selecteur root correspond à la racine du site, généralement la balise html */
+:root{
+    font-size:8px;
+    /* Je peux définir ici des variables avec me "--" réutislisable ailleurs dans le css avec l'appel "var(nomVariable)" */
+    --main-background-color:blue;
+    --chaussette:green;
+    --divTextSize:30px;
+}
+
+body{
+    font-size: 20px;
+}
+
+.target1{
+    font-size: var(--divTextSize);
+    font-family: Playwrite;
+    /* La fonction rgb prends 3 valeurs (red, green, blue) allant de 0 à 255  */
+    background-color: rgb(0,0,0);
+    color:rgb(255, 255, 255) ;
+}
+
+.target2{
+    font-size: var(--divTextSize);
+    font-family: Playwrite;
+    background-color: rgb(26,143,104);
+    /* La fonction rgba fonctionne comme rgb mais avec également une valeur allant de 0 à 1 définissant l'opacité */
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.target3{
+    /* La fonction hexadecimale commence par "#" puis prend 3 paires de chiffres allant de  0 à F pour les couleurs rgb. L'ajout d'une autre paire de chiffre définit l'opacité*/
+    background-color: #000;
+    color:#FFF;
+    
+    /* Le em équivaut à deux fois la taille héritée du parent */
+    font-size: 2em;
+}
+
+.target4{
+    background-color: #30c944;
+    color: #00000080;
+    
+    
+    /* Le rem équivaut à deux fois la taille héritée de la racine (:root) */
+    font-size: 2rem;
+}
+
+.target5{
+    /* La fonction hsl prend 3 valeurs:
+        - la  première correspond à des degrès qur une roue chromatique
+        - la deuxième à la saturation de la couleur,
+        - la troisième à la brillance */
+    background-color: hsl(0,0%,0%);
+    color: hsl(360,100%,100%);
+
+    /* Le vw (ViewportWidth) correspond au pourcentage de la largeur du viewport */
+    font-size: 5vw;
+}
+
+.target6{
+    background-color: hsl(288,61%,31%);
+    /* Comme avec rgb->rgba ou hexadecimal, hsl->hsla prend une quatrième valeur avec le niveau de transparence */
+    color: hsla(0, 0%, 0%, 0.5);
+    
+    /* Le vh (ViewportHeight) correspond au pourcentage de la hauteur du viewport */
+    font-size: 10vh;
+}
+
+.target7{
+    /* Le vmax(Viewport Max) correspond au pourcentage de l'axe le plus grand. Si la largeur est plus grande que la hauteur, alors on utilise le pourcentage de la largeur, et inversement: .
+    De la même manière on peut utiliser vmin */
+    font-size: 5vmax;
+}
+
+.target8{
+    /* On peut également utiliser un pourcentage % qui correspond au pourcentage du parent */
+    font-size: 50%;
+}
+
+.target9{
+    /* Le clamp permet d'adapter la taille de la police en indiquant un minimum et un maximum et au milieu une valeur intermédiaire */
+    font-size: clamp(16px,5vw,30px);
+}
+.target10{
+    
+}

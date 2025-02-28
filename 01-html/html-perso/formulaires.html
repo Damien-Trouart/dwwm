@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+        <!-- balise meta pour fournir des informations au navigateur -->
+        <meta charset="UTF-8"> 
+        <!-- charset pour definir le type d'encodage -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- viewport = toute la partie visible de la page internet, d'ou l'importance de définir 1) la width égale au device width et 2) le scale de 1.0 (toute la page serait dézoomée pour tout intégrer visuellement sinon) -->
+        <title>formulaire</title>
+    </head>
+
+
+
+    <body>
+
+    <!-- h$*6 -->
+     <h1></h1>
+     <h2></h2>
+     <h3></h3>
+     <h4></h4>
+     <h5></h5>
+     <h6></h6>
+
+     <!-- une balise <section> ou <article> possède un titre h -->
+
+    <!-- li*3>{item $} -->
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+
+    <!-- menu et ul sont des balises fonctionnant de la même manière -->
+
+    <!-- <pre></pre> } bloc qui garde toute la mise en page dans le rendu final (police, espaces, retour à la ligne...) -->
+
+    <!-- <hr> balise qui permet de créer une ligne séparatrice horizontale -->
+
+    <!-- balise <strong> et balise <b> : but premier pour donner une haute importance pour strong et juste attirer l'intention pour b -->
+
+    <!-- balise <u></u> : anciennement underline, but premier pour faire ressortir un texte comme nom propre ou une erreur  -->
+
+    <!-- même chose pour les anciennes balises <i></i>, <em></em> -->
+
+    <!-- <abbr></abbr> : abbréviation. Le title permet de faire apparaitre une infobulle au sruvol -->
+    <abbr title="Hyper Text Markup Langage">HTML</abbr>
+
+
+    <!-- <Video> : l'attribut poster="./img.svg" permet de mettre une image avant que la vidéo se lance -->
+
+    
+<form action="" method="">
+    <label for="recherche">Recherche :</label>
+    <input type="text" name="" id="recherche">
+    <input type="submit" value="Envoyer">
+    ce dernier input peut être remplacé par un bouton <button type="button">Envoyer</button>
+
+    <!-- method="get"}informations du formulaire directement envoyées dans l'url.  } utilisé pour google, wiki, etc
+        method="post"} informations envoyées de façon cachées dans le corps de la requète } utilisé dès qu'il y a des info personelles-->
+
+    <!-- exemple de action qui envoie sur une recherche google: action = "https://www.google.fr/search" method = "get" -->
+    <!-- exemple de action qui prérempli déjà le formulaire: action = "./formulaires.html" method = "post" -->
+
+    <!-- Autres input généralement utilisés : 
+            type="file" (ici uniquement si le formulaire est en method ="post") généralement associé à l'attribut "multiple" pour sélectionner plusieurs fichiers
+            type="password" pour voir des points et non le mdp
+            type="hidden" (utile pour le back, la sécurité) -->
+    
+    <fieldset>
+        <legend>Quel est votre animal préféré et pourquoi le chien?</legend>
+        <input type="checkbox" name="chien" id="chi">
+        <label for="">Chi</label>
+        <br>
+        <input type="checkbox" name="dog" id="dog">
+        <label for="dog">Dog</label>
+        <br>
+        <input type="checkbox" name="perro" id="per">
+        <label for="per">Perro</label>
+    </fieldset>
+    <fieldset>
+        <legend>Choisis ton plat préféré</legend>
+        <input type="radio" name="plat" id="wel">
+        <label for="wel">Welsh</label>
+        <br>
+        <input type="radio" name="plat" id="las">
+        <label for="las">Lasagne</label>
+        <br>
+        <input type="radio" name="plat" id="piz">
+        <label for="piz">Pizza</label>
+    </fieldset>
+    <!-- Pour les boutons de type radio, par défault impossible de déséléctionner après coup. Pour n'avoir qu'un choix possible, s'assurer que tous les input ont le même name.
+    Il faut également ne pas oublier de mettre une value aux radios sinon la seule info envoyée est "langage=on"-->
+
+    <!-- Pour une liste à choix pour lesquel la value est envoyée et non le texte dans l'option: -->
+    <select name="jeu" id="jeu" multiple>
+    <option value="baldur">Baldur's Gate 3</option>
+    <option value="witcher" selected>Witcher 3</option>
+    <option value="fromsoft">Elden Ring</option>
+</select>
+<input type="text" name="test" id="test" required>
+<button type="submit">Envoyer</button>
+
+</form>
+
+</body>
+</html>

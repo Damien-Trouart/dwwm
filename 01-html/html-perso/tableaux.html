@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tableaux</title>
+    <style>
+    table,td,th{
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+</head>
+<body>
+    <!-- un tableau -->
+    <table>
+        <!-- une rangée -->
+        <tr>
+            <!-- une case -->
+            <td>pomme</td>
+            <td>pêche</td>
+        </tr>
+        <tr>
+            <!-- Chaque rangée d'un tableau doit avoir le même nombre de case -->
+            <td>poire</td>
+            <td>abricot</td>
+        </tr>
+    </table>
+
+    <!-- tableau poussé -->
+    <table>
+        <!-- l'en-tête du tableau -->
+        <thead>
+            <tr>
+                <!-- titres colonnes (table heading) -->
+                <th colspan="2">fruit</th>
+                    <!-- le colspan permet de fusionner des colonnes -->
+                <th colspan="2">légumes</th>
+            </tr>
+        </thead>
+        <!-- corps du tableau -->
+        <tbody>
+            <tr>
+                <td>banane</td>
+                <td>cerise</td>
+                <td>carotte</td>
+                    <!-- le rowspan permet de fusionner des rangées -->
+                <td rowspan="2">courgette</td>
+            </tr>
+            <tr>
+                <td>pomme</td>
+                <td colspan="2">tomate</td>
+            </tr>
+        </tbody>
+        <!-- pied du tableau -->
+        <tfoot>
+            <tr>
+                <td colspan="4"> Mangez 5 fruits et légumes par jour</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+</body>
+</html>

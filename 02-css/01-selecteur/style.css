@@ -1,0 +1,120 @@
+h1{
+    background-color: aqua;
+}
+
+/* Enfant direct ou indirect (descendance) */
+main p {background-color: lightsalmon;}
+
+/* Enfant direct */
+main > p { background-color: olive;}
+
+/* sélectionne tout frère direct ou indirect soit tous les enfants de ce type suivant le parent de ce type */
+h1 ~ p {background-color: burlywood;}
+
+/* sélectionne premier enfant direct de ce type */
+h1 + p {background-color: crimson;}
+
+
+
+/* PSEUDO CLASSES*/
+/* Elles se reconnaissent à la syntaxe suivante ":nomPseudoClasse" */
+li:hover{background-color: chartreuse;}
+
+/* 2e enfant si de type p prend la commande. Possible également depuis la fin avec nth-last-child */
+header p:nth-child(2){color: skyblue;}
+
+/* 2e enfant p prend la commande  Possible également depuis la fin avec nth-last-of-type */
+header p:nth-of-type(2){color: peachpuff;}
+
+/* Les balises a n'héritent pas des propriétés de couleur de leurs parents, il faut les cibler directement */
+h1 a {color: red;}
+
+/* couleur du lien si visité */
+h1 a:visited {color: gold;}
+
+/* action lors du clique */
+h1 a:active {color: darkmagenta;}
+
+/* Propriété lorsqu'il y a le focus (l'utilisateur appuie sur tab ce qui selectionnne l'élément sur l apage) */
+h1 a:focus{color: steelblue;}
+
+/* Sélectionne tous les éléments enfants d'un type sauf un */
+p span:not(:nth-child(2)) {color: seagreen;}
+
+/* Selectionne toutes les balises sauf celles choisies */
+*:not(h1,a) {font-size: 20px;}
+
+/* Sélectionne tous les éléments choisis se trouvant dans d'autre éléments (pour cet exemple, ancinennement cela aurait été "article p, header p" soit tous les p dans article et header */
+:where(article,header) p {background-color: lightgray;}
+
+
+
+
+/* PSEUDO ELEMENTS */
+/* "blabla::pseudoElement" */
+
+article p::first-letter {font-size: 50px;}
+
+main > p::first-line {font-weight: bold;}
+
+/* Créer un élément au debut d'un élément */
+h1::before 
+{content: "C'est faux ->";}
+
+/* Créer un élément à la fin d'un élément */
+h1::after
+{content: "<- Il ment"}
+
+/* obligatoire d'utiliser content avec ::before et ::after */
+
+
+
+
+
+
+/* CLASSES, ID, AUTRES ATTRIBUTS*/
+/* Sélectionner un ID avec # */
+#MenuImportant{
+    font-size: 42px;
+    font-weight: bold;
+    color: red;
+}
+
+/* Sélectionner une classe avec .  */
+.peuImportant{
+    font-size: 8px;
+    font-weight: 100;
+    color: gainsboro;
+}
+
+/* Sélectionnner tous les éléments qui possèdent un attribut particulier ([attribut]) */
+a[target]{
+    font-style: italic;
+}
+
+/* Sélectionne tout élément dont l'attribut contient un mot particulier. Le * signifie ici contient */
+a[href*="amazon"]{
+    font-family: monospace;
+}
+
+/* Sélectionne tout élément dont l'attribut se termine par un mot particulier. Le $ signifie ici à la fin*/
+a[href$=".fr"] {
+    background-color: blue;
+}
+
+/* Sélectionne tout élément dont l'attribut commence par un mot particulier. Le ^ signifie ici commence*/
+a[href^="https"] {
+    background-color:yellow;
+}
+
+
+
+
+
+/* SPECIFICITE ET PRIORITE */
+/* La priorité spécifique est représentée par 3 chiffres (ex: 0,0,1)
+Chaque chiffre a la prio sur le suivant (ex(1,0,0) a la prio sur (0,18,9); (0,0,3) a la prio sur (0,0,1)
+Ces chiffres sont définis par les selecteurs:
+    - Une balise (div, main...) fera évoluer le dernier chiffre (ex: main>p vaut (0,0,2)
+    - Une classe au pseudo-classe fait évoluer le second chiffre (ex: div.classeCool vaut (0,1,1)
+    - Un ID fait évoluer le premier chiffre (ex: div#idImportant vaut (1,0,1) */
